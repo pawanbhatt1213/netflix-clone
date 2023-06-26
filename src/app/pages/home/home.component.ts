@@ -10,11 +10,13 @@ export class HomeComponent {
 
 
   bannerData: any;
+  trendingData: any;
 
   constructor(private movieApi: MovieApilService){}
 
   ngOnInit(){
-    this.movieApi.bannerApiData().subscribe((res)=>this.bannerData=res.results)
+    this.movieApi.bannerApiData().subscribe((res)=>this.bannerData=res.results);
+    this.movieApi.trendingMovieApiData().subscribe((res)=>this.trendingData=res.results);
   }
 
 
